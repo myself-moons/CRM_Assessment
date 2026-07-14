@@ -167,9 +167,6 @@ Open the `frontend` folder using a local web server or open `index.html` in your
 - Google Login
 - Role-Based Access Control (RBAC)
 - Dashboard
-- Better Search
-- File Attachments
-- Email Notifications
 
 ---
 
