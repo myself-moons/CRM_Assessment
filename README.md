@@ -1,6 +1,6 @@
-# Support CRM
+# Custom CRM
 
-A simple Customer Support CRM built as part of the Datastraw AI & Tech Internship Assessment. It'll also be a simple foundation for future projects with Roles, Firebase, etc as per my requirements.
+A simple Customer Support CRM built as part of an Internship Assessment. It'll also be a simple foundation for future projects with Roles, Firebase, etc as per my requirements. Made in such a way that it acts as a foundation for future FastAPI Web projects with Python.
 
 This project is a full-stack web application that allows support teams to create, manage, search, and update customer support tickets. It is built with a simple and clean architecture that is easy to understand and maintain.
 
@@ -113,11 +113,11 @@ The frontend sends requests to the FastAPI backend. The backend handles the logi
 
 ## Running the Project
 
-### Clone the repository (if needed)
+### Clone the repository (if needed). Use your appropriate URL. Here its HTTPS
 
 ```bash
-git clone <repository-url>
-cd SupportCRM
+git clone [<repository-url>](https://github.com/myself-moons/CRM_Assessment.git)
+cd custom-crm
 ```
 
 ### Start the Backend
@@ -162,7 +162,7 @@ Open the `frontend` folder using a local web server or open `index.html` in your
 
 ---
 
-## Personal Improvements
+## Personal Improvements for the future
 
 - Google Login
 - Role-Based Access Control (RBAC)
