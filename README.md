@@ -1,6 +1,6 @@
 # Custom CRM
 
-A simple Customer Support CRM built as part of an Internship Assessment. It'll also be a simple foundation for future projects with Roles, Firebase, etc as per my requirements. Made in such a way that it acts as a foundation for future FastAPI Web projects with Python.
+A simple Customer Support CRM built as part of an Internship Assessment. It'll also be a simple foundation for future projects with Roles, Firebase, etc as per my requirements. Made in such a way that it acts as a base for future FastAPI Web projects with Python.
 
 This project is a full-stack web application that allows support teams to create, manage, search, and update customer support tickets. It is built with a simple and clean architecture that is easy to understand and maintain.
 
