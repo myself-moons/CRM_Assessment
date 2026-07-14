@@ -1,0 +1,5 @@
+custom-crm/venv/
+custom-crm/__pycache__/
+custom-crm/.env
+custom-crm/.firebase/
+custom-crm/serviceAccountKey.json
