@@ -1,6 +1,6 @@
 # Support CRM
 
-A simple Customer Support CRM built as part of the Datastraw AI & Tech Internship Assessment.
+A simple Customer Support CRM built as part of the Datastraw AI & Tech Internship Assessment. It'll also be a simple foundation for future projects with Roles, Firebase, etc as per my requirements.
 
 This project is a full-stack web application that allows support teams to create, manage, search, and update customer support tickets. It is built with a simple and clean architecture that is easy to understand and maintain.
 
@@ -113,7 +113,7 @@ The frontend sends requests to the FastAPI backend. The backend handles the logi
 
 ## Running the Project
 
-### Clone the repository
+### Clone the repository (if needed)
 
 ```bash
 git clone <repository-url>
