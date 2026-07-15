@@ -1,0 +1,220 @@
+# Custom CRM - Manual Test Cases
+
+TC-001
+Description: Start the FastAPI backend.
+Steps:
+
+1. Activate virtual environment.
+2. Start FastAPI server.
+   Expected Result: Server starts without errors.
+   Status: Passed
+   Date: 15th July 2026
+
+TC-002
+Description: Open backend in browser.
+Steps:
+
+1. Visit [http://localhost:8000](http://localhost:8000)
+   Expected Result: Browser loads successfully.
+   Status: Passed
+   Date: 15th July 2026
+
+TC-003
+Description: Backend reload.
+Steps:
+
+1. Edit a Python file.
+2. Save it.
+   Expected Result: FastAPI automatically reloads.
+   Status: Passed
+   Date: 15th July 2026
+
+TC-004
+Description: Backend connects to Firebase.
+Expected Result: No authentication errors.
+Status: Passed
+Date: 15th July 2026
+
+TC-005
+Description: Read data from Firebase.
+Expected Result: Request returns successfully.
+Status: Passed
+Date: 15th July 2026
+
+TC-006
+Description: Create ticket with valid information.
+Expected Result: Ticket created.
+Status: Passed
+Date: 15th July 2026
+
+TC-007
+Description: Leave customer name empty.
+Expected Result: Validation error.
+Status: Passed
+Date: 15th July 2026
+
+TC-008
+Description: Leave email empty.
+Expected Result: Validation error.
+Status: Passed
+Date: 15th July 2026
+
+TC-009
+Description: Invalid email format.
+Example: abc
+Expected Result: Validation error.
+Status: Passed
+Date: 15th July 2026
+
+TC-010
+Description: Subject empty.
+Expected Result: Validation error.
+Status: Passed
+Date: 15th July 2026
+
+TC-011
+Description: Description empty.
+Expected Result: Validation error.
+Status: Passed
+Date: 15th July 2026
+
+TC-012
+Description: Ticket ID generated automatically.
+Expected Result: ID format: TKT-0001
+Status: Passed
+Date: 15th July 2026
+
+TC-013
+Description: Created timestamp generated.
+Expected Result: Current timestamp stored.
+Status: Passed
+Date: 15th July 2026
+
+TC-014
+Description: View all tickets.
+Expected Result: All tickets displayed.
+Status: Passed
+Date: 15th July 2026
+
+TC-015
+Description: Newest ticket appears.
+Expected Result: Newly created ticket visible.
+Status: Passed
+Date: 15th July 2026
+
+TC-016
+Description: Search by customer name.
+Expected Result: Matching tickets shown.
+Status:
+Date:
+
+TC-017
+Description: Search by email.
+Expected Result: Matching ticket shown.
+Status:
+Date:
+
+TC-018
+Description: Search by Ticket ID.
+Expected Result: Exact ticket returned.
+Status:
+Date:
+
+TC-019
+Description: Search random text.
+Expected Result: Empty results.
+Status:
+Date:
+
+TC-020
+Description: Filter Open.
+Expected Result: Only Open tickets.
+Status:
+Date:
+
+TC-021
+Description: Filter In Progress.
+Expected Result: Only In Progress tickets.
+Status:
+Date:
+
+TC-022
+Description: Filter Closed.
+Expected Result: Only Closed tickets.
+Status:
+Date:
+
+TC-023
+Description: Open ticket details.
+Expected Result: Full information displayed.
+Status:
+Date:
+
+TC-024
+Description: Open invalid Ticket ID.
+Expected Result: Ticket not found.
+Status:
+Date:
+
+TC-025
+Description: Update status to In Progress.
+Expected Result: Status updates.
+Status:
+Date:
+
+TC-026
+Description: Update status to Closed.
+Expected Result: Status updates.
+Status:
+Date:
+
+TC-027
+Description: Add note.
+Expected Result: Note saved.
+Status:
+Date:
+
+TC-028
+Description: Open website on desktop.
+Expected Result: Layout correct.
+Status:
+Date:
+
+TC-029
+Description: Open website on mobile width.
+Expected Result: Responsive layout.
+Status:
+Date:
+
+TC-030
+Description: Navigation between pages.
+Expected Result: Pages work correctly.
+Status:
+Date:
+
+TC-031
+Description: No console errors.
+Expected Result: Browser console clean.
+Status:
+Date:
+
+TC-032
+Description: No backend errors.
+Expected Result: Terminal shows no unexpected errors.
+Status:
+Date:
+
+TC-033
+Description: All assessment features work.
+Checklist:
+
+* Ticket creation
+* Ticket listing
+* Search
+* Filter
+* Update status
+* Notes
+* Detail page
+  Expected Result: Everything functional.
+  Status:
+  Date:

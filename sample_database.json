@@ -1,0 +1,20 @@
+{
+  "tickets": {
+    "TKT-001": {
+      "ticketId": "TKT-001",
+      "customerName": "John Doe",
+      "customerEmail": "john@example.com",
+      "subject": "Unable to login",
+      "description": "I cannot login to my account after resetting my password.",
+      "status": "Open",
+      "createdAt": "2026-07-15T10:00:00Z",
+      "updatedAt": "2026-07-15T10:00:00Z",
+      "notes": [
+        {
+          "text": "Ticket created.",
+          "createdAt": "2026-07-15T10:00:00Z"
+        }
+      ]
+    }
+  }
+}
