@@ -3,3 +3,4 @@ __pycache__/
 .env
 .firebase/
 serviceAccountKey.json
+custom-crm/backend/secrets/
