@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Custom CRM</title>
+
+    <!-- Global stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================================
+         Navigation
+    =========================================================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Custom CRM
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Dashboard</a>
+
+            <a href="create.html">Create Ticket</a>
+
+        </div>
+
+    </nav>
+
+    <!-- ==========================================================
+         Main Container
+    =========================================================== -->
+
+    <main class="container">
+
+        <div class="card">
+
+            <h1>Support Tickets</h1>
+
+            <p>
+                View, search and manage customer support tickets.
+            </p>
+
+        </div>
+
+        <!-- Controls -->
+
+        <div class="card">
+
+            <div class="toolbar">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by Ticket ID, Customer, Email or Subject">
+
+                <select id="statusFilter">
+
+                    <option value="">All Status</option>
+
+                    <option value="Open">Open</option>
+
+                    <option value="In Progress">
+                        In Progress
+                    </option>
+
+                    <option value="Closed">
+                        Closed
+                    </option>
+
+                </select>
+
+                <button
+                    class="btn-secondary"
+                    id="refreshButton">
+
+                    Refresh
+
+                </button>
+
+                <button
+                    class="btn-primary"
+                    onclick="location.href='create.html'">
+
+                    Create Ticket
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Loading -->
+
+        <div
+            id="loading"
+            class="loading">
+
+            Loading tickets...
+
+        </div>
+
+        <!-- Empty State -->
+
+        <div
+            id="emptyState"
+            class="card hidden text-center">
+
+            <h3>No Tickets Found</h3>
+
+            <p>
+
+                Create your first support ticket.
+
+            </p>
+
+        </div>
+
+        <!-- Ticket Table -->
+
+        <div
+            id="tableCard"
+            class="card hidden">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Ticket ID</th>
+
+                        <th>Customer</th>
+
+                        <th>Email</th>
+
+                        <th>Subject</th>
+
+                        <th>Created At</th>
+
+                        <th>Status</th>
+
+                        <th>Last Updated</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="ticketTableBody">
+
+                    <!-- JavaScript inserts rows here -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <script src="js/api.js"></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

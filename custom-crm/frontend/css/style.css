@@ -1,0 +1,592 @@
+/*
+---------------------------------------------------------
+Custom CRM
+Global Stylesheet
+
+This file contains the shared styling used across every
+page of the CRM. Keeping all styles here ensures a
+consistent look and makes future changes easier.
+---------------------------------------------------------
+*/
+
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Variables ---------- */
+
+:root {
+
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --closed: #9CA3AF;
+    --danger: #EF4444;
+
+    --background: #F5F7FB;
+    --card: #FFFFFF;
+
+    --text: #1F2937;
+    --muted: #6B7280;
+
+    --border: #E5E7EB;
+
+    --shadow:
+        0 8px 24px rgba(0,0,0,0.05);
+
+    --radius: 12px;
+
+}
+
+/* ---------- Body ---------- */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    line-height: 1.5;
+
+}
+
+/* ---------- Navigation ---------- */
+
+.navbar {
+
+    background: white;
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 16px 32px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+}
+
+.logo {
+
+    font-size: 1.4rem;
+
+    font-weight: bold;
+
+    color: var(--primary);
+
+}
+
+.nav-links {
+
+    display: flex;
+
+    gap: 16px;
+
+}
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    font-weight: 500;
+
+}
+
+.nav-links a:hover {
+
+    color: var(--primary);
+
+}
+
+/* ---------- Layout ---------- */
+/* ---------- Toolbar ---------- */
+
+.toolbar {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+}
+
+.toolbar input {
+
+    flex: 1;
+
+    min-width: 260px;
+
+}
+
+.toolbar select {
+
+    width: 180px;
+
+}
+
+.toolbar button {
+
+    white-space: nowrap;
+
+}
+
+.container {
+
+    width: min(1200px, 95%);
+
+    margin: 32px auto;
+
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+
+    background: var(--card);
+
+    border-radius: var(--radius);
+
+    padding: 24px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 24px;
+
+}
+
+/* ---------- Typography ---------- */
+
+h1,
+h2,
+h3 {
+
+    margin-bottom: 16px;
+
+}
+
+p {
+
+    margin-bottom: 8px;
+
+}
+
+/* ---------- Forms ---------- */
+
+.form-group {
+
+    margin-bottom: 18px;
+
+}
+
+label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-weight: 600;
+
+}
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    font-size: 1rem;
+
+    background: white;
+
+}
+
+textarea {
+
+    resize: vertical;
+
+    min-height: 120px;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    outline: none;
+
+    border-color: var(--primary);
+
+}
+
+/* ---------- Buttons ---------- */
+
+button {
+
+    cursor: pointer;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 12px 18px;
+
+    font-size: 0.95rem;
+
+    transition: 0.2s;
+
+}
+
+.btn-primary {
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+.btn-primary:hover {
+
+    background: var(--primary-hover);
+
+}
+
+.btn-secondary {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+}
+
+.btn-secondary:hover {
+
+    background: #f3f4f6;
+
+}
+
+button:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+}
+
+/* ---------- Status Badges ---------- */
+
+.status {
+
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    color: white;
+
+    font-size: .85rem;
+
+    font-weight: bold;
+
+}
+
+.status-open {
+
+    background: var(--success);
+
+}
+
+.status-progress {
+
+    background: var(--warning);
+
+}
+
+.status-closed {
+
+    background: var(--closed);
+
+}
+
+/* ---------- Table ---------- */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+th,
+td {
+
+    padding: 14px;
+
+    border-bottom: 1px solid var(--border);
+
+    text-align: left;
+
+}
+
+th {
+
+    background: #F9FAFB;
+
+}
+
+/* ---------- Utility ---------- */
+
+.text-center {
+
+    text-align: center;
+
+}
+
+.hidden {
+
+    display: none;
+
+}
+
+.mt-2 {
+
+    margin-top: 16px;
+
+}
+
+.mb-2 {
+
+    margin-bottom: 16px;
+
+}
+
+.message {
+
+    margin-top: 16px;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+}
+
+.success {
+
+    background: #DCFCE7;
+
+    color: #166534;
+
+}
+
+.error {
+
+    background: #FEE2E2;
+
+    color: #991B1B;
+
+}
+
+/* ---------- Loading ---------- */
+
+.loading {
+
+    text-align: center;
+
+    padding: 32px;
+
+    color: var(--muted);
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 16px;
+
+        align-items: flex-start;
+
+    }
+
+    .nav-links {
+
+        flex-wrap: wrap;
+
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+
+        display: block;
+
+    }
+
+    thead {
+
+        display: none;
+
+    }
+
+    tr {
+
+        background: white;
+
+        margin-bottom: 16px;
+
+        padding: 12px;
+
+        border-radius: 12px;
+
+        box-shadow: var(--shadow);
+
+    }
+
+    td {
+
+        border: none;
+
+        padding: 8px 0;
+
+    }
+
+}
+
+/* ---------- Form Width ---------- */
+
+form {
+
+    max-width: 700px;
+
+}
+
+/* ---------- Messages ---------- */
+
+.message {
+
+    margin-top: 20px;
+
+}
+
+.message.success {
+
+    background: #DCFCE7;
+
+    color: #166534;
+
+    border: 1px solid #86EFAC;
+
+}
+
+.message.error {
+
+    background: #FEE2E2;
+
+    color: #991B1B;
+
+    border: 1px solid #FCA5A5;
+
+}
+
+/* ---------- Ticket Information ---------- */
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 20px;
+
+}
+
+.info-item {
+
+    margin-bottom: 16px;
+
+}
+
+.info-label {
+
+    font-weight: bold;
+
+    color: var(--muted);
+
+    margin-bottom: 4px;
+
+}
+
+.info-value {
+
+    word-break: break-word;
+
+}
+
+/* ---------- Notes ---------- */
+
+.note {
+
+    border-left: 4px solid var(--primary);
+
+    background: #F9FAFB;
+
+    padding: 16px;
+
+    margin-bottom: 16px;
+
+    border-radius: 8px;
+
+}
+
+.note-time {
+
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: .85rem;
+
+}
+
+/* ---------- Form Buttons ---------- */
+
+.button-group {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}

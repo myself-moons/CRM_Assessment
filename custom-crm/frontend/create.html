@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Ticket | Custom CRM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Custom CRM
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Dashboard</a>
+            <a href="create.html">Create Ticket</a>
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        <div class="card">
+
+            <h1>Create Support Ticket</h1>
+
+            <p>
+                Enter the customer's information below.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <form id="ticketForm">
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        Customer Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="customerEmail">
+                        Customer Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customerEmail">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"></textarea>
+
+                </div>
+
+                <div class="toolbar">
+
+                    <button
+                        type="submit"
+                        id="submitButton"
+                        class="btn-primary">
+
+                        Submit Ticket
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-secondary"
+                        onclick="window.location='index.html'">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div
+                id="message"
+                class="message hidden">
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/create.js"></script>
+
+</body>
+
+</html>

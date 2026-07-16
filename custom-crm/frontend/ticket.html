@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ticket Details | Custom CRM</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        Custom CRM
+
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Dashboard
+        </a>
+
+        <a href="create.html">
+            Create Ticket
+        </a>
+
+    </div>
+
+</nav>
+
+<main class="container">
+
+    <!-- Ticket Information -->
+
+    <section class="card">
+
+        <h2>Ticket Information</h2>
+
+        <div id="ticketInformation">
+
+            <div class="loading">
+
+                Loading ticket...
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Update Ticket -->
+
+    <section class="card">
+
+        <h2>Update Ticket</h2>
+
+        <form id="updateForm">
+
+            <div class="form-group">
+
+                <label>Status</label>
+
+                <select id="status">
+
+                    <option>Open</option>
+
+                    <option>In Progress</option>
+
+                    <option>Closed</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Customer Name</label>
+
+                <input
+                    id="customerName">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input
+                    id="customerEmail">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Subject</label>
+
+                <input
+                    id="subject">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Description</label>
+
+                <textarea
+                    id="description"></textarea>
+
+            </div>
+
+            <button
+                type="submit"
+                id="saveButton"
+                class="btn-primary">
+
+                Save Changes
+
+            </button>
+
+        </form>
+
+        <div
+            id="updateMessage"
+            class="message hidden">
+
+        </div>
+
+    </section>
+
+    <!-- Internal Notes -->
+
+    <section class="card">
+
+        <h2>Internal Notes</h2>
+
+        <textarea
+            id="noteText"
+            placeholder="Write an internal note..."></textarea>
+
+        <br><br>
+
+        <button
+            id="noteButton"
+            class="btn-primary">
+
+            Add Note
+
+        </button>
+
+    </section>
+
+    <!-- Timeline -->
+
+    <section class="card">
+
+        <h2>Notes Timeline</h2>
+
+        <div id="notesTimeline">
+
+            <p>No notes available.</p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/ticket.js"></script>
+
+</body>
+
+</html>

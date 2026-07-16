@@ -24,12 +24,15 @@ app = FastAPI(
 # Include the API routes from routes.py
 app.include_router(router)
 
-# Allow only our frontend to communicate with this backend
+# Allow only our frontend to communicate with this backend.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://127.0.0.1:5500",
-        "http://localhost:5500"
+        "http://localhost:5500",
+        "https://curly-space-goldfish-5vgj4vprp4j3vg5j-5500.app.github.dev",
+        # TODO: Add Firebase Hosting frontend URL here when deploying to production
+        # "https://your-firebase-hosting-url.firebaseapp.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
