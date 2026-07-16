@@ -7,6 +7,8 @@ In this, We:
 1. Create the FastAPI application.
 2. Configure CORS.
 3. Register API routes.
+
+Use "uvicorn main:app --reload" command to run the backend server in dev mode.
 """
 
 from fastapi import FastAPI
