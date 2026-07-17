@@ -233,55 +233,6 @@ function populateForm() {
 
 }
 
-function validateUpdateForm(data) {
-    if (!data.customerName.trim()) {
-        return "Customer name is required.";
-    }
-
-    if (data.customerName.trim().length < 2) {
-        return "Customer name must be at least 2 characters.";
-    }
-
-    if (data.customerName.trim().length > 100) {
-        return "Customer name must not exceed 100 characters.";
-    }
-
-    if (!data.customerEmail.trim()) {
-        return "Customer email is required.";
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.customerEmail.trim())) {
-        return "Please enter a valid email address.";
-    }
-
-    if (!data.subject.trim()) {
-        return "Subject is required.";
-    }
-
-    if (data.subject.trim().length < 3) {
-        return "Subject must be at least 3 characters.";
-    }
-
-    if (data.subject.trim().length > 100) {
-        return "Subject must not exceed 100 characters.";
-    }
-
-    if (!data.description.trim()) {
-        return "Description is required.";
-    }
-
-    if (data.description.trim().length < 5) {
-        return "Description must be at least 5 characters.";
-    }
-
-    if (data.description.trim().length > 1000) {
-        return "Description must not exceed 1000 characters.";
-    }
-
-    return null;
-}
-
 /**
  * Display all internal notes.
  */
@@ -363,20 +314,6 @@ document
             const customerEmail = document.getElementById("customerEmail").value.trim();
             const subject = document.getElementById("subject").value.trim();
             const description = document.getElementById("description").value.trim();
-
-            const validationError = validateUpdateForm({
-                customerName,
-                customerEmail,
-                subject,
-                description,
-            });
-
-            if (validationError) {
-                showMessage(validationError, "error");
-                saveButton.disabled = false;
-                saveButton.textContent = "Save Changes";
-                return;
-            }
 
             if (status !== currentTicket.status) {
                 updates.status = status;

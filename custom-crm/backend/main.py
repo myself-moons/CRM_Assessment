@@ -30,12 +30,12 @@ async def validation_exception_handler(request, exc):
     errors = []
 
     for error in exc.errors():
-        loc = error.get("loc", [])
+        loc = [part for part in error.get("loc", []) if part != "body"]
         msg = error.get("msg", "")
-        loc_text = ".".join(str(part) for part in loc if part is not None)
 
-        if loc_text:
-            errors.append(f"{loc_text}: {msg}")
+        if loc:
+            field_name = str(loc[-1]).replace("_", " ").capitalize()
+            errors.append(f"{field_name}: {msg}")
         else:
             errors.append(msg)
 

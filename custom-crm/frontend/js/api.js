@@ -37,44 +37,20 @@ async function handleResponse(response) {
             if (typeof item === "string") {
                 return item;
             }
-            if (Array.isArray(item)) {
-                return item.map(formatErrorItem).join(" ");
-            }
             if (item?.msg) {
-                if (typeof item.msg === "string") {
-                    return item.msg;
-                }
-                if (Array.isArray(item.msg)) {
-                    return item.msg.join(" ");
-                }
-                return JSON.stringify(item.msg);
+                return item.msg;
             }
             if (item?.message) {
-                if (typeof item.message === "string") {
-                    return item.message;
-                }
-                if (Array.isArray(item.message)) {
-                    return item.message.join(" ");
-                }
-                return JSON.stringify(item.message);
+                return item.message;
             }
             if (item?.loc) {
                 return `${item.loc.map(part => String(part)).join(".")}: ${item.msg || item.message || ""}`;
             }
-            if (typeof item === "object" && item !== null) {
-                return Object.values(item)
-                    .map(formatErrorItem)
-                    .filter(Boolean)
-                    .join(" ");
-            }
-            return String(item);
+            return JSON.stringify(item);
         };
 
         if (data) {
-            if (typeof data.message === "string" && data.message.trim()) {
-                errorMessage = data.message;
-            }
-            else if (typeof data.detail === "string" && data.detail.trim()) {
+            if (typeof data.detail === "string") {
                 errorMessage = data.detail;
             }
             else if (Array.isArray(data.detail)) {
@@ -82,6 +58,9 @@ async function handleResponse(response) {
             }
             else if (Array.isArray(data)) {
                 errorMessage = data.map(formatErrorItem).join(" ");
+            }
+            else if (typeof data.message === "string") {
+                errorMessage = data.message;
             }
             else if (typeof data.detail === "object" && data.detail !== null) {
                 errorMessage = formatErrorItem(data.detail);
