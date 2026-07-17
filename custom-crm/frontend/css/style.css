@@ -295,6 +295,24 @@ button:disabled {
 
 }
 
+.form-help {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.form-help p {
+    margin: 0 0 10px;
+}
+
+.form-help p:last-child {
+    margin-bottom: 0;
+}
+
 /* ---------- Status Badges ---------- */
 
 .status {
