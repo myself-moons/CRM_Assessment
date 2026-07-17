@@ -15,19 +15,20 @@ Responsibilities
 
 // Backend API URL
 // For local GitHub Codespaces testing:
-// const API_BASE_URL = "https://your-codespace-url-8000";
+// const API_URL = "https://your-codespace-url-8000";
 
-// TODO: Replace with production URLs when deploying:
-// - Firebase Hosting: Your frontend will be deployed here
-// - Railway: Update API_BASE_URL to your Railway backend URL
-// Example production setup:
+// Backend API (Railway Production)
 const API_URL = "https://efficient-mindfulness-production-c1e7.up.railway.app";
+
+// Local development example:
+// const API_URL = "http://127.0.0.1:8000";
+
 /**
  * Handle API responses consistently.
  */
 async function handleResponse(response) {
 
-    const data = await response.json();
+    const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
         throw new Error(data.detail || "Something went wrong.");
@@ -93,7 +94,7 @@ function formatDate(dateString) {
  */
 async function getTickets() {
 
-    const response = await fetch(`${API_BASE_URL}/tickets/`);
+    const response = await fetch(`${API_URL}/tickets/`);
 
     const data = await handleResponse(response);
 
@@ -107,7 +108,7 @@ async function getTickets() {
 async function getTicket(ticketId) {
 
     const response = await fetch(
-        `${API_BASE_URL}/tickets/${ticketId}`
+        `${API_URL}/tickets/${ticketId}`
     );
 
     const data = await handleResponse(response);
@@ -126,7 +127,7 @@ async function getTicket(ticketId) {
 async function createTicket(ticketData) {
 
     const response = await fetch(
-        `${API_BASE_URL}/tickets/`,
+        `${API_URL}/tickets/`,
         {
 
             method: "POST",
@@ -150,7 +151,7 @@ async function createTicket(ticketData) {
 async function updateTicket(ticketId, updatedData) {
 
     const response = await fetch(
-        `${API_BASE_URL}/tickets/${ticketId}`,
+        `${API_URL}/tickets/${ticketId}`,
         {
 
             method: "PUT",
