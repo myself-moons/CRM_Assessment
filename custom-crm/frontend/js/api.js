@@ -71,7 +71,10 @@ async function handleResponse(response) {
         };
 
         if (data) {
-            if (typeof data.detail === "string") {
+            if (typeof data.message === "string" && data.message.trim()) {
+                errorMessage = data.message;
+            }
+            else if (typeof data.detail === "string" && data.detail.trim()) {
                 errorMessage = data.detail;
             }
             else if (Array.isArray(data.detail)) {
@@ -79,9 +82,6 @@ async function handleResponse(response) {
             }
             else if (Array.isArray(data)) {
                 errorMessage = data.map(formatErrorItem).join(" ");
-            }
-            else if (typeof data.message === "string") {
-                errorMessage = data.message;
             }
             else if (typeof data.detail === "object" && data.detail !== null) {
                 errorMessage = formatErrorItem(data.detail);
