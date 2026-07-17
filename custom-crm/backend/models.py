@@ -22,7 +22,7 @@ class CreateTicket(BaseModel):
                          max_length=100)
     
     description: str = Field(..., 
-cd ..                             min_length=5, 
+                             min_length=5, 
                              max_length=1000)
 
 
