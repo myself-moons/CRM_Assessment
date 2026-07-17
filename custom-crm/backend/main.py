@@ -12,7 +12,10 @@ Use "uvicorn main:app --reload" command to run the backend server in dev mode.
 """
 
 from fastapi import FastAPI
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from fastapi import status
 from routes import router
 
 # Create the FastAPI application
@@ -20,6 +23,29 @@ app = FastAPI(
     title="Support CRM API",
     version="1"
 )
+
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request, exc):
+    errors = []
+
+    for error in exc.errors():
+        loc = error.get("loc", [])
+        msg = error.get("msg", "")
+        loc_text = ".".join(str(part) for part in loc if part is not None)
+
+        if loc_text:
+            errors.append(f"{loc_text}: {msg}")
+        else:
+            errors.append(msg)
+
+    return JSONResponse(
+        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        content={
+            "success": False,
+            "message": "Validation failed: " + " | ".join(errors),
+        },
+    )
 
 # Include the API routes from routes.py
 app.include_router(router)

@@ -37,16 +37,37 @@ async function handleResponse(response) {
             if (typeof item === "string") {
                 return item;
             }
+            if (Array.isArray(item)) {
+                return item.map(formatErrorItem).join(" ");
+            }
             if (item?.msg) {
-                return item.msg;
+                if (typeof item.msg === "string") {
+                    return item.msg;
+                }
+                if (Array.isArray(item.msg)) {
+                    return item.msg.join(" ");
+                }
+                return JSON.stringify(item.msg);
             }
             if (item?.message) {
-                return item.message;
+                if (typeof item.message === "string") {
+                    return item.message;
+                }
+                if (Array.isArray(item.message)) {
+                    return item.message.join(" ");
+                }
+                return JSON.stringify(item.message);
             }
             if (item?.loc) {
                 return `${item.loc.map(part => String(part)).join(".")}: ${item.msg || item.message || ""}`;
             }
-            return JSON.stringify(item);
+            if (typeof item === "object" && item !== null) {
+                return Object.values(item)
+                    .map(formatErrorItem)
+                    .filter(Boolean)
+                    .join(" ");
+            }
+            return String(item);
         };
 
         if (data) {
