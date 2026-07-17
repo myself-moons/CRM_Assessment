@@ -31,8 +31,7 @@ async function handleResponse(response) {
     const data = await response.json().catch(() => null);
 
     if (!response.ok) {
-        let errorMessage = "Something went wrong.";
-
+        let errorMessage = "Something went wrong. Please try again.";
         const formatErrorItem = item => {
             if (typeof item === "string") {
                 return item;

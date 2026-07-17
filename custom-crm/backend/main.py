@@ -56,7 +56,9 @@ app.add_middleware(
     allow_origins=[
         "http://127.0.0.1:5500",
         "http://localhost:5500",
-        "https://curly-space-goldfish-5vgj4vprp4j3vg5j-5500.app.github.dev",
+        # Github Codespaces URL (replace with your actual Codespace URL)
+        "https://curly-space-goldfish-5vgj4vprp4j3vg5j-8000.app.github.dev",
+        # Firebase Hosting URLs (replace with your actual Firebase Hosting URLs)
         "https://custom-crm-3212b.web.app",
         "https://custom-crm-3212b.firebaseapp.com",
     ],
