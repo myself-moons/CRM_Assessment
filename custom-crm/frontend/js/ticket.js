@@ -308,34 +308,39 @@ document
             saveButton.textContent =
                 "Saving...";
 
-            const updates = {
+            const updates = {};
+            const status = document.getElementById("status").value;
+            const customerName = document.getElementById("customerName").value.trim();
+            const customerEmail = document.getElementById("customerEmail").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const description = document.getElementById("description").value.trim();
 
-                customerName:
-                    document
-                        .getElementById("customerName")
-                        .value,
+            if (status !== currentTicket.status) {
+                updates.status = status;
+            }
 
-                customerEmail:
-                    document
-                        .getElementById("customerEmail")
-                        .value,
+            if (customerName !== currentTicket.customerName) {
+                updates.customerName = customerName;
+            }
 
-                subject:
-                    document
-                        .getElementById("subject")
-                        .value,
+            if (customerEmail !== currentTicket.customerEmail) {
+                updates.customerEmail = customerEmail;
+            }
 
-                description:
-                    document
-                        .getElementById("description")
-                        .value,
+            if (subject !== currentTicket.subject) {
+                updates.subject = subject;
+            }
 
-                status:
-                    document
-                        .getElementById("status")
-                        .value
+            if (description !== currentTicket.description) {
+                updates.description = description;
+            }
 
-            };
+            if (Object.keys(updates).length === 0) {
+                showMessage("No changes were made.", "error");
+                saveButton.disabled = false;
+                saveButton.textContent = "Save Changes";
+                return;
+            }
 
             try {
 

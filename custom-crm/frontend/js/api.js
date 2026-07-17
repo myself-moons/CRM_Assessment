@@ -31,7 +31,40 @@ async function handleResponse(response) {
     const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
-        throw new Error(data.detail || "Something went wrong.");
+        let errorMessage = "Something went wrong.";
+
+        if (data) {
+            if (typeof data.detail === "string") {
+                errorMessage = data.detail;
+            }
+            else if (Array.isArray(data.detail)) {
+                errorMessage = data.detail
+                    .map(item => {
+                        if (typeof item === "string") {
+                            return item;
+                        }
+                        if (item?.msg) {
+                            return item.msg;
+                        }
+                        if (item?.message) {
+                            return item.message;
+                        }
+                        if (item?.loc) {
+                            return `${item.loc.join(".")}: ${item.msg || item.message || ""}`;
+                        }
+                        return JSON.stringify(item);
+                    })
+                    .join(" ");
+            }
+            else if (typeof data.message === "string") {
+                errorMessage = data.message;
+            }
+            else if (typeof data.detail === "object") {
+                errorMessage = JSON.stringify(data.detail);
+            }
+        }
+
+        throw new Error(errorMessage);
     }
 
     return data;
