@@ -12,10 +12,10 @@ The application allows support teams to create, manage, search, and update custo
 https://custom-crm-3212b.web.app
 
 **Backend API:**  
-https://efficient-mindfulness-production-c1e7.up.railway.app
+https://crmassessment-production.up.railway.app
 
-**API Documentation:**  
-https://efficient-mindfulness-production-c1e7.up.railway.app/docs
+**API Endpoint Documentation:**  
+https://crmassessment-production.up.railway.app/docs
 
 ---
 

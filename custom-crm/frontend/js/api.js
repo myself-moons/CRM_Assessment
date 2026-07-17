@@ -18,7 +18,7 @@ Responsibilities
 // const API_URL = "https://your-codespace-url-8000";
 
 // Backend API (Railway Production)
-const API_URL = "https://efficient-mindfulness-production-c1e7.up.railway.app";
+const API_URL = "https://crmassessment-production.up.railway.app";
 
 // Local development example:
 // const API_URL = "http://127.0.0.1:8000";
