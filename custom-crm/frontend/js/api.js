@@ -15,14 +15,13 @@ Responsibilities
 
 // Backend API URL
 // For local GitHub Codespaces testing:
-const API_BASE_URL = "https://curly-space-goldfish-5vgj4vprp4j3vg5j-8000.app.github.dev";
+// const API_BASE_URL = "https://your-codespace-url-8000";
 
 // TODO: Replace with production URLs when deploying:
 // - Firebase Hosting: Your frontend will be deployed here
 // - Railway: Update API_BASE_URL to your Railway backend URL
 // Example production setup:
-// const API_BASE_URL = "https://your-railway-backend-url.railway.app";
-
+const API_URL = "https://efficient-mindfulness-production-c1e7.up.railway.app";
 /**
  * Handle API responses consistently.
  */

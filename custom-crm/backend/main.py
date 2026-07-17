@@ -30,7 +30,8 @@ app.add_middleware(
     allow_origins=[
         "http://127.0.0.1:5500",
         "http://localhost:5500",
-        "https://curly-space-goldfish-5vgj4vprp4j3vg5j-5500.app.github.dev",
+        # "https://curly-space-goldfish-5vgj4vprp4j3vg5j-5500.app.github.dev",
+        "https://efficient-mindfulness-production-c1e7.up.railway.app"        
         # TODO: Add Firebase Hosting frontend URL here when deploying to production
         # "https://your-firebase-hosting-url.firebaseapp.com",
     ],
