@@ -1,77 +1,98 @@
 # Custom CRM
 
-A simple Customer Support CRM built as part of an Internship Assessment. It'll also be a simple foundation for future projects with Roles, Firebase, etc as per my requirements. Made in such a way that it acts as a base for future FastAPI Web projects with Python.
+A simple Customer Support CRM built as part of an AI & Tech Internship Assessment. The project serves as a foundation for future FastAPI web applications while following a clean, beginner-friendly architecture.
 
-This project is a full-stack web application that allows support teams to create, manage, search, and update customer support tickets. It is built with a simple and clean architecture that is easy to understand and maintain.
+The application allows support teams to create, manage, search, and update customer support tickets using a REST API backed by Firebase Realtime Database.
 
 ---
 
-## Tech Stack
+# Live Demo
 
-### Backend
+**Frontend:**  
+https://custom-crm-3212b.web.app
+
+**Backend API:**  
+https://efficient-mindfulness-production-c1e7.up.railway.app
+
+**API Documentation:**  
+https://efficient-mindfulness-production-c1e7.up.railway.app/docs
+
+---
+
+# Tech Stack
+
+## Backend
 - Python
 - FastAPI
 
-### Frontend
+## Frontend
 - HTML
 - CSS
 - Vanilla JavaScript
 
-### Database
+## Database
 - Firebase Realtime Database
 
-### Deployment
+## Deployment
 - Railway (Backend)
 - Firebase Hosting (Frontend)
 
 ---
 
-## Features
+# Features
 
-### Ticket Management
+## Ticket Management
+
 - Create new support tickets
-- Auto-generate Ticket IDs
-- Save customer details
-- Save creation date and time
+- Auto-generated Ticket IDs
+- Save customer information
+- Automatic timestamps
+- Input validation
 
-### Ticket List
+## Ticket List
+
 - View all tickets
-- Clean and responsive table
+- Responsive table layout
 - View ticket details
 
-### Search & Filter
-- Search by:
-  - Ticket ID
-  - Customer Name
-  - Customer Email
-  - Subject
-- Filter tickets by:
-  - Open
-  - In Progress
-  - Closed
+## Search & Filter
 
-### Update Tickets
-- Change ticket status
-- Add notes or comments
-- Save update time
+Search tickets by:
+
+- Ticket ID
+- Customer Name
+- Customer Email
+- Subject
+
+Filter tickets by:
+
+- Open
+- In Progress
+- Closed
+
+## Ticket Updates
+
+- Update ticket status
+- Add notes/comments
+- Automatic updated timestamp
 
 ---
 
-## API Endpoints
+# API Endpoints
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
-| POST | `/api/tickets` | Create a ticket |
-| GET | `/api/tickets` | Get all tickets |
-| GET | `/api/tickets/{ticketId}` | Get one ticket |
-| PUT | `/api/tickets/{ticketId}` | Update a ticket |
+| POST | `/tickets/` | Create a ticket |
+| GET | `/tickets/` | Get all tickets |
+| GET | `/tickets/{ticketId}` | Get ticket details |
+| PUT | `/tickets/{ticketId}` | Update ticket |
 
 ---
 
-## Project Structure
+# Project Structure
 
-```
-SupportCRM/
+```text
+custom-crm/
 │
 ├── backend/
 │   ├── main.py
@@ -80,7 +101,8 @@ SupportCRM/
 │   ├── firebase.py
 │   ├── models.py
 │   ├── config.py
-│   └── requirements.txt
+│   ├── requirements.txt
+│   └── .env
 │
 ├── frontend/
 │   ├── index.html
@@ -89,87 +111,153 @@ SupportCRM/
 │   ├── css/
 │   └── js/
 │
+├── firebase.json
+├── .firebaserc
 ├── README.md
-└── .env.example
+└── .gitignore
 ```
 
 ---
 
-## How It Works
+# Architecture
 
 ```
-Frontend (HTML, CSS, JavaScript)
+Frontend (HTML/CSS/JavaScript)
             │
             ▼
-      FastAPI Backend
+     FastAPI Backend
             │
             ▼
 Firebase Realtime Database
 ```
 
-The frontend sends requests to the FastAPI backend. The backend handles the logic and stores data in Firebase Realtime Database.
+The frontend communicates with the FastAPI backend through REST API calls. The backend performs validation, business logic, and stores ticket data inside Firebase Realtime Database.
 
 ---
 
-## Running the Project
+# Environment Variables
 
-### Clone the repository (if needed). Use your appropriate URL. Here its HTTPS
+Create a `.env` file inside the **backend** folder.
+
+Example:
+
+```env
+FIREBASE_CREDENTIALS=secrets/firebase-key.json
+FIREBASE_DATABASE_URL=https://your-project-id-default-rtdb.firebaseio.com/
+```
+
+---
+
+# Running the Project
+
+## Clone the repository
 
 ```bash
-git clone [<repository-url>](https://github.com/myself-moons/CRM_Assessment.git)
+git clone https://github.com/myself-moons/CRM_Assessment.git
+
 cd custom-crm
 ```
 
-### Start the Backend
+---
+
+## Backend Setup
+
+Move into the backend directory.
 
 ```bash
 cd backend
+```
 
+Create a virtual environment.
+
+```bash
 python -m venv .venv
 ```
 
-Activate the virtual environment
+### Activate the virtual environment
 
-Windows
+**Windows**
 
 ```bash
 .venv\Scripts\activate
 ```
 
-Linux / macOS
+**Linux / macOS**
 
 ```bash
 source .venv/bin/activate
 ```
 
-Install the required packages
+Install the dependencies.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the server
+Run the FastAPI server.
 
 ```bash
 uvicorn main:app --reload
 ```
 
+The backend will be available at:
+
+```
+http://127.0.0.1:8000
+```
+
+API documentation:
+
+```
+http://127.0.0.1:8000/docs
+```
+
 ---
 
-### Start the Frontend
+## Frontend Setup
 
-Open the `frontend` folder using a local web server or open `index.html` in your browser.
+Open the **frontend** folder using **VS Code Live Server** (recommended) or any local web server.
+
+Ensure that `frontend/js/api.js` points to the appropriate backend URL before running the application.
 
 ---
 
-## Personal Improvements for the future
+# Deployment
 
-- Google Login
+## Backend
+
+- Railway
+
+## Frontend
+
+- Firebase Hosting
+
+---
+
+# Manual Testing
+
+The project includes manual test cases covering:
+
+- Backend startup
+- Firebase connectivity
+- Ticket creation
+- Validation
+- Ticket listing
+- Search
+- Status filtering
+- Ticket updates
+- Notes
+- Responsive UI
+- Navigation
+- Error handling
+
+---
+
+# Future Improvements
+
 - Role-Based Access Control (RBAC)
-- Dashboard
+- Admin Dashboard
+- Dashboard Analytics
 
 ---
 
-## Project Goal
-
-The goal of this project is to build a simple, clean, and working Customer Support CRM while following a simple project structure. The focus is on writing readable code, building REST APIs, and creating a responsive user interface.

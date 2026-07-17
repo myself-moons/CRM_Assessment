@@ -6,18 +6,18 @@ Steps:
 
 1. Activate virtual environment.
 2. Start FastAPI server.
-   Expected Result: Server starts without errors.
-   Status: Passed
-   Date: 15th July 2026
+Expected Result: Server starts without errors.
+Status: Passed
+Date: 15th July 2026
 
 TC-002
 Description: Open backend in browser.
 Steps:
 
-1. Visit [http://localhost:8000](http://localhost:8000)
-   Expected Result: Browser loads successfully.
-   Status: Passed
-   Date: 15th July 2026
+1. Visit http://localhost:8000
+Expected Result: Browser loads successfully.
+Status: Passed
+Date: 15th July 2026
 
 TC-003
 Description: Backend reload.
@@ -25,9 +25,9 @@ Steps:
 
 1. Edit a Python file.
 2. Save it.
-   Expected Result: FastAPI automatically reloads.
-   Status: Passed
-   Date: 15th July 2026
+Expected Result: FastAPI automatically reloads.
+Status: Passed
+Date: 15th July 2026
 
 TC-004
 Description: Backend connects to Firebase.
@@ -105,116 +105,117 @@ Date: 15th July 2026
 TC-016
 Description: Search by customer name.
 Expected Result: Matching tickets shown.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-017
 Description: Search by email.
 Expected Result: Matching ticket shown.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-018
 Description: Search by Ticket ID.
 Expected Result: Exact ticket returned.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-019
 Description: Search random text.
 Expected Result: Empty results.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-020
 Description: Filter Open.
 Expected Result: Only Open tickets.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-021
 Description: Filter In Progress.
 Expected Result: Only In Progress tickets.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-022
 Description: Filter Closed.
 Expected Result: Only Closed tickets.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-023
 Description: Open ticket details.
 Expected Result: Full information displayed.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-024
 Description: Open invalid Ticket ID.
 Expected Result: Ticket not found.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-025
 Description: Update status to In Progress.
 Expected Result: Status updates.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-026
 Description: Update status to Closed.
 Expected Result: Status updates.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-027
 Description: Add note.
 Expected Result: Note saved.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-028
 Description: Open website on desktop.
 Expected Result: Layout correct.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-029
 Description: Open website on mobile width.
 Expected Result: Responsive layout.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-030
 Description: Navigation between pages.
 Expected Result: Pages work correctly.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-031
 Description: No console errors.
 Expected Result: Browser console clean.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-032
 Description: No backend errors.
 Expected Result: Terminal shows no unexpected errors.
-Status:
-Date:
+Status: Passed
+Date: 16th July 2026
 
 TC-033
 Description: All assessment features work.
-Checklist:
 
-* Ticket creation
-* Ticket listing
-* Search
-* Filter
-* Update status
-* Notes
-* Detail page
-  Expected Result: Everything functional.
-  Status:
-  Date:
+Checklist:
+- Ticket creation
+- Ticket listing
+- Search
+- Filter
+- Update status
+- Notes
+- Detail page
+
+Expected Result: Everything functional.
+Status: Passed
+Date: 16th July 2026
