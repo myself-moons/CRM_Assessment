@@ -1,6 +1,6 @@
 # Custom CRM
 
-A simple Customer Support CRM built as part of an AI & Tech Internship Assessment. The project serves as a foundation for future FastAPI web applications while following a clean, beginner-friendly architecture.
+A simple Customer Support CRM built as part of an AI & Tech Internship Assessment. The project serves as a foundation for future FastAPI web applications with Firebase while following a clean and modular architecture.
 
 The application allows support teams to create, manage, search, and update customer support tickets using a REST API backed by Firebase Realtime Database.
 
@@ -137,7 +137,7 @@ The frontend communicates with the FastAPI backend through REST API calls. The b
 
 # Environment Variables
 
-Create a `.env` file inside the **backend** folder.
+Create a `.env` file inside the **backend** folder. This same variables need to be on Railway too.
 
 Example:
 
@@ -222,21 +222,9 @@ Ensure that `frontend/js/api.js` points to the appropriate backend URL before ru
 
 ---
 
-# Deployment
-
-## Backend
-
-- Railway
-
-## Frontend
-
-- Firebase Hosting
-
----
-
 # Manual Testing
 
-The project includes manual test cases covering:
+The project includes manual test (Test_Cases.txt) cases covering:
 
 - Backend startup
 - Firebase connectivity
@@ -253,7 +241,7 @@ The project includes manual test cases covering:
 
 ---
 
-# Future Improvements
+# Personal Improvements for the future
 
 - Role-Based Access Control (RBAC)
 - Admin Dashboard
