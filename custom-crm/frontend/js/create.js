@@ -52,8 +52,8 @@ function validateForm(data) {
     if (!data.subject.trim())
         return "Subject is required.";
 
-    if (data.subject.length < 5)
-        return "Subject must be at least 5 characters.";
+    if (data.subject.length < 3)
+        return "Subject must be at least 3 characters.";
 
     if (data.subject.length > 100)
         return "Subject must not exceed 100 characters.";
@@ -61,8 +61,8 @@ function validateForm(data) {
     if (!data.description.trim())
         return "Description is required.";
 
-    if (data.description.length < 10)
-        return "Description must be at least 10 characters.";
+    if (data.description.length < 5)
+        return "Description must be at least 5 characters.";
 
     if (data.description.length > 1000)
         return "Description must not exceed 1000 characters.";

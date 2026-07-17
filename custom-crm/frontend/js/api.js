@@ -28,40 +28,50 @@ const API_URL = "https://crmassessment-production.up.railway.app";
  */
 async function handleResponse(response) {
 
-    const data = await response.json().catch(() => ({}));
+    const data = await response.json().catch(() => null);
 
     if (!response.ok) {
         let errorMessage = "Something went wrong.";
+
+        const formatErrorItem = item => {
+            if (typeof item === "string") {
+                return item;
+            }
+            if (item?.msg) {
+                return item.msg;
+            }
+            if (item?.message) {
+                return item.message;
+            }
+            if (item?.loc) {
+                return `${item.loc.map(part => String(part)).join(".")}: ${item.msg || item.message || ""}`;
+            }
+            return JSON.stringify(item);
+        };
 
         if (data) {
             if (typeof data.detail === "string") {
                 errorMessage = data.detail;
             }
             else if (Array.isArray(data.detail)) {
-                errorMessage = data.detail
-                    .map(item => {
-                        if (typeof item === "string") {
-                            return item;
-                        }
-                        if (item?.msg) {
-                            return item.msg;
-                        }
-                        if (item?.message) {
-                            return item.message;
-                        }
-                        if (item?.loc) {
-                            return `${item.loc.join(".")}: ${item.msg || item.message || ""}`;
-                        }
-                        return JSON.stringify(item);
-                    })
-                    .join(" ");
+                errorMessage = data.detail.map(formatErrorItem).join(" ");
+            }
+            else if (Array.isArray(data)) {
+                errorMessage = data.map(formatErrorItem).join(" ");
             }
             else if (typeof data.message === "string") {
                 errorMessage = data.message;
             }
-            else if (typeof data.detail === "object") {
-                errorMessage = JSON.stringify(data.detail);
+            else if (typeof data.detail === "object" && data.detail !== null) {
+                errorMessage = formatErrorItem(data.detail);
             }
+            else {
+                errorMessage = JSON.stringify(data);
+            }
+        }
+
+        if (!errorMessage || errorMessage === "{}") {
+            errorMessage = `${response.status} ${response.statusText}`;
         }
 
         throw new Error(errorMessage);

@@ -37,13 +37,13 @@ class UpdateTicket(BaseModel):
 
     subject: Optional[str] = Field(
         None,
-        min_length=5,
+        min_length=3,
         max_length=100
     )
 
     description: Optional[str] = Field(
         None,
-        min_length=10,
+        min_length=5,
         max_length=1000
     )
 

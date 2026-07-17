@@ -364,9 +364,12 @@ document
             }
 
             catch (error) {
+                const errorText = typeof error === "string"
+                    ? error
+                    : error?.message || JSON.stringify(error) || "An unknown error occurred.";
 
                 showMessage(
-                    error.message,
+                    errorText,
                     "error"
                 );
 
@@ -434,9 +437,12 @@ noteButton.addEventListener(
         }
 
         catch (error) {
+            const errorText = typeof error === "string"
+                ? error
+                : error?.message || JSON.stringify(error) || "An unknown error occurred.";
 
             showMessage(
-                error.message,
+                errorText,
                 "error"
             );
 
